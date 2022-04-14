@@ -39,8 +39,6 @@ function decorate(totals) {
 
   return totals.map((x) => {
     const percent = Math.floor((x.total / sum) * 100);
-    console.log('sum', sum);
-    console.log('percent', percent);
     return {
       ...x,
       percent: percent,
@@ -66,4 +64,12 @@ export async function loadAllSubreddits(username, onTotalsUpdated) {
     });
     onTotalsUpdated(decorate(totals));
   }
+}
+
+export function getHeaderStartY(screenHeight, headerHeight) {
+  return screenHeight / 2 - headerHeight / 2;
+}
+
+export function getHeaderStartX(screenWidth, headerWidth) {
+  return screenWidth / 2 - headerWidth / 2;
 }

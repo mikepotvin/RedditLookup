@@ -26,9 +26,6 @@ const Subreddit = ({ item }) => {
 
         <Progress progress={item.percent} />
       </View>
-      <View style={styles.totalContainer}>
-        <Text style={styles.totalText}>{item.total}</Text>
-      </View>
     </Animated.View>
   );
 };
@@ -37,7 +34,8 @@ export default Subreddit;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 16,
+    paddingLeft: 16,
+    paddingRight: 32,
     paddingVertical: 8,
     flexDirection: 'row',
     backgroundColor: 'white',

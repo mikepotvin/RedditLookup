@@ -5,13 +5,14 @@ import Animated, {
   useSharedValue,
   withDelay,
   withSpring,
+  withTiming,
 } from 'react-native-reanimated';
 
 const Progress = ({ progress }) => {
   const amount = useSharedValue(0);
 
   useEffect(() => {
-    amount.value = withSpring(progress);
+    amount.value = withDelay(500, withSpring(progress));
   }, [progress]);
 
   const animatedStyles = useAnimatedStyle(() => {
